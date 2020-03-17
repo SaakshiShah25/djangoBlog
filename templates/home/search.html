@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Search{% endblock title %}
+
+
+
+{% block body %}
+<div class="container">
+{% if post|length <1 %}
+<h2>No results found related {{query}}</h2>
+{% endif %}
+{% for post in post %}
+
+<div class="card card-blog my-3">
+    <div class="card-header card-header-image">
+        <div class="container">
+        <a href="#pablo">
+            <img class="img" src="{{post.img.url}}" style="height:300px; width:100%;">
+            <div class="card-title" style="color:#218380; font-size:22px">
+                {{post.title}}
+            </div>
+        </a>
+        </div>
+    </div>
+    <div class="card-body">
+        <h6 class="card-category test" style="color:#F26D52; font-size:20px;">{{post.author}}</h6>
+        <h6 class="card-category">{{post.timestamp}}</h6>
+        <p class="card-description">
+            {{post.content|truncatechars:300}}
+        </p>
+        <a href="/blog/{{post.slug}}" role="button" class="btn btn-primary" style="background-color:#EE4266;">Continue Reading</button></a>
+    </div>
+</div>
+{% endfor %}
+</div>
+
+{% endblock body %}

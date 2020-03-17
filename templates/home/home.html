@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+{% block homeactive %} active {% endblock homeactive %}
+
+{% block body %}
+<div class="container">
+    <div class="jumbotron my-4" style="height: 17rem;">
+        <h1 class="display-6" style=" color:#218380;">Welcome to MyBlog!</h1>
+        <p class="lead">This is a regularly updated website that contains latest posts and provides insight into the current affairs.</p>
+        <hr class="my-4">
+        <p>MyBlog shall allow users for posting their articles in the form of a blog,comment,share,delete and perform various associated actions. </p>
+    </div>
+    <div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header" style="background-color:#F42D84"; >
+                 <h4 class="card-title" style="color:white; opacity:0.8;"><a href="blog/" style="color:#FFD23F">Tech Posts</a></h4>
+                <p class="category" style="color:white; opacity:0.8;" >Most Popular</p>
+            </div>
+            <div class="card-body">
+                The latest tech news about the world's best (and sometimes worst) hardware, apps, and much more.From top companies like Google and Apple to tiny startups vying for your attention    
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header" style="background-color:#F42D84"; >
+                <h4 class="card-title" style="color:white; opacity:0.8;"><a href="blog/" style="color:#FFD23F">Health-related Posts</a></h4>
+                <p class="category" style="color:white; opacity:0.8;">Most Popular</p>
+            </div>
+            <div class="card-body">
+                As officially defined by the World Health Organization, a state of complete physical, mental, and social well-being, not merely the absence of disease or infirmity.   
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header" style="background-color:#F42D84";>
+                <h4 class="card-title" style="color:white; opacity:0.8;"><a href="blog/" style="color:#FFD23F">Adventurous Posts</a></h4>
+                <p class="category" style="color:white; opacity:0.8;">Most Popular</p>
+            </div>
+            <div class="card-body">
+                Adventures may be activities with some potential for physical danger such as traveling, exploring, skydiving, mountain climbing, scuba diving, river rafting or participating in extreme sports.   
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+</div>
+
+  
+
+
+
+
+{% endblock body %}
