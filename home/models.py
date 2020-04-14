@@ -16,5 +16,8 @@ class Add(models.Model):
     title=models.CharField(max_length=100)
     author=models.CharField(max_length=100)
     content=models.TextField()
-    #img=models.ImageField(upload_to='pics')
+    img=models.ImageField(upload_to='pics')
+
+    def __str__(self):
+        return self.name
    

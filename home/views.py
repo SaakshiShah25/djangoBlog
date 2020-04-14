@@ -25,8 +25,6 @@ def contact(request):
         contact=Contact(name=name,email=email,contact=contact,content=content)
         contact.save()
         return redirect('home')
-    #else:
-       # return HttpResponse('page not found')
     return render(request,'home/contact.html')        
  
 
