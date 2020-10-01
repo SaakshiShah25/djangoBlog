@@ -17,8 +17,8 @@
 
     <title>{% block title %}{% endblock title %}</title>
   </head>
-  <body>
-    <nav class="navbar navbar-expand-lg" style=" background-color:#50BBF6;">
+  <body style="background-color: white;">
+    <nav class="navbar navbar-expand-lg" style=" background-color:#355C7D;">
         <div class="container">
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -49,26 +49,26 @@
               <form method="GET" action="{% url 'search' %}">
       
                 
-                <div class="form-group has-white mr-3" style="background-color:white";>
-                  <input class="form-control"  type="search"  placeholder="Search" aria-label="Search" name="xyz" id="xyz">
+                <div class="form-group has-white mr-3" style="background-color:white;">
+                  <input class="form-control"  type="search"  placeholder="Search" aria-label="Search" name="xyz" id="xyz" style="padding-left:10px">
                 </div>
-                <button type="submit" class="btn mr-2" style="background-color:#50BBF6; color:white; font-weight:bold; ">Search</button></a>
+                <button type="submit" class="btn mr-2" style="background-color:#6c5b7b; color:white; font-weight:bold;"> Search</button></a>
                    
                 
               </form>
                 {% if user.is_authenticated %}
-                <button type="button" class="btn mr-2" style="color:white; font-weight:bold;  background-color:#50BBF6;">
+                <button type="button" class="btn mr-2" style="color:white; font-weight:bold;  background-color:#6c5b7b">
                   Hello,{{user.username}}
                 </button>
                 
-                <a href="logout" type="submit" class="btn mr-2" style="color:white; font-weight:bold;  background-color:#50BBF6;">
+                <a href="logout" type="submit" class="btn mr-2" style="color:white; font-weight:bold;  background-color:#6c5b7b">
                     Logout
                 </a>
                  {% else %}
-                <button type="button" class="btn mr-2" style="color:white; font-weight:bold;  background-color:#50BBF6;"  data-target="#signupModal" data-toggle="modal">
+                <button type="button" class="btn mr-2" style="color:white; font-weight:bold;  background-color:#6c5b7b;"  data-target="#signupModal" data-toggle="modal">
                 SignUp
                 </button>
-                <button type="button" class="btn mr-2" style="color:white; font-weight:bold;  background-color:#50BBF6;" data-target="#loginModal" data-toggle="modal">
+                <button type="button" class="btn mr-2" style="color:white; font-weight:bold;  background-color:#6c5b7b;" data-target="#loginModal" data-toggle="modal">
                 Login
                 </button>
                 {% endif %}
@@ -92,29 +92,29 @@
               {% csrf_token %}
               <div class="form-group">
                 <label for="first_name">First Name</label>
-                <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter first name">
+                <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter first name" style="padding-left:10px">
               </div>
               <div class="form-group">
                 <label for="last_name">Last Name</label>
-                <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter last name">
+                <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter last name" style="padding-left:10px">
               </div>
                 <div class="form-group">
                     <label for="username">UserName</label>
-                    <input type="text" class="form-control" id="username" name="username" placeholder="Enter username">
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Enter username" style="padding-left:10px">
                   </div>
                   <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" style="padding-left:10px">
                   </div>
                   <div class="form-group">
                     <label for="password1">Password</label>
-                    <input type="password" class="form-control" id="password1" name="password1" placeholder="Enter password">
+                    <input type="password" class="form-control" id="password1" name="password1" placeholder="Enter password" style="padding-left:10px">
                   </div>
                   <div class="form-group">
                     <label for="password2">Password Again</label>
-                    <input type="password" class="form-control" id="password2" name="password2" placeholder="Confirm password">
+                    <input type="password" class="form-control" id="password2" name="password2" placeholder="Confirm password" style="padding-left:10px">
                   </div>
-                  <div class="modal-footer">
+                  <div class="modal-footer" >
                     <button type="submit" class="btn btn-primary" style="background:#EE4266">SUBMIT</button>
                   </div>
             </form>
@@ -130,23 +130,26 @@
         <div class="modal-content">
           <div class="modal-header" style="background:#AAFFEF">
             <h5 class="modal-title" id="loginModal" >Login</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+            <div class = "hold" style = "display:flex; justify-content:center; align-items:center" >
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            
           </div>
           <div class="modal-body">
             <form  action="{% url 'login' %}" method='POST'>
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="loginusername">UserName</label>
-                    <input type="text" class="form-control" id="loginusername" name="loginusername" placeholder="Enter username">
+                    <input type="text" class="form-control" id="loginusername" name="loginusername" placeholder="Enter username" style="padding-left:10px">
                   </div>
                   <div class="form-group">
                     <label for="loginpassword">Password</label>
-                    <input type="password" class="form-control" id="loginpassword" name="loginpassword" placeholder="Enter password">
+                    <input type="password" class="form-control" id="loginpassword" name="loginpassword" placeholder="Enter password" style="padding-left:10px">
                   </div>
-                  <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary" style="background:#EE4266">LOGIN</button>
+                  <div class="modal-footer" style = "display:flex; justify-content:center; align-items:center">
+                    <button type="submit" class="btn btn-primary" style="background:#EE4266;">LOGIN</button>
                   </div>
             </form>
           </div>
